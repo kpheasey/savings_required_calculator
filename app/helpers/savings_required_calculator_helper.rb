@@ -1,2 +1,0 @@
-module SavingsRequiredCalculatorHelper
-end
