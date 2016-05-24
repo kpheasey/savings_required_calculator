@@ -1,0 +1,23 @@
+= form_tag savings_required_calculator_path, method: :get do
+  = label :calculator, :target_income, 'Target Retirement Income'
+  = number_field :calculator, :target_income, value: calculator.target_income, step: 0.01
+
+  = label :calculator, :social_security, 'Combined Social Security'
+  = number_field :calculator, :social_security, value: calculator.social_security, step: 0.01
+
+  = label :calculator, :pensions, 'Combined Pensions'
+  = number_field :calculator, :pensions, value: calculator.pensions, step: 0.01
+
+  = label :calculator, :other_income, 'Other Income'
+  = number_field :calculator, :other_income, value: calculator.other_income, step: 0.01
+
+  = label :calculator, :avg_inflation_rate, 'Average Inflation Rate'
+  = number_field :calculator, :avg_inflation_rate, value: calculator.avg_inflation_rate, step: 0.001
+
+  = label :calculator, :avg_rate_return, 'Average Rate of Return'
+  = number_field :calculator, :avg_rate_return, value: calculator.avg_rate_return, step: 0.001
+
+  = label :calculator, :current_portfolio, 'Current Portfolio'
+  = number_field :calculator, :current_portfolio, value: calculator.current_portfolio, step: 0.01
+
+  = submit_tag 'Submit'

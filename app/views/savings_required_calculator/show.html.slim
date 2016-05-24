@@ -1,0 +1,25 @@
+div class="row"
+  div class="medium-4 columns"
+    = render 'form', calculator: @calculator
+
+  div class="medium-8 columns"
+    div class="row"
+      div class="small-12 columns"
+        = high_chart('savings-required-chart', @chart)
+
+    div class="row"
+      div class="small-12 columns"
+        p
+          | You are planning to retire in #{@calculator.years_to_retirement} and your current savings are approximately
+            #{number_to_currency @calculator.current_portfolio}.
+
+        p
+          | The monthly income we are targeting for retirement is #{number_to_currency @calculator.target_income} in
+            today's dollars.  After adjusting for a #{number_to_percentage @calculator.avg_inflation_rate} inflation
+            rate we calculate that you will need approximately #{number_to_currency @calculator.adjusted_target_income}
+            per month.
+
+        p
+          | We recommend a portfolio size of #{number_to_currency @calculator.recommended_min_portfolio} to support your
+            needs.  You will need to save an average of #{number_to_currency @calculator.required_annual_savings} for
+            the next #{@calculator.years_to_retirement} years.
